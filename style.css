@@ -10,6 +10,8 @@
   /* --text-color: #f0d3f7; */
   --text-color: #e1e5ee;
   --border-color: #0c7489;
+  --border-radius: 3px;
+  --border-radius-5: 5px;
 }
 
 body {
@@ -22,7 +24,6 @@ body {
 }
 
 h1 {
-  text-align: center;
   padding: 1rem 0;
 }
 
@@ -37,7 +38,7 @@ h1 {
   border: 1px solid var(--border-color);
   box-shadow: var(--box-shadow);
 
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   margin: 2px;
   font-size: 1.75rem;
   font-weight: 700;
@@ -51,7 +52,7 @@ h1 {
 
 .filled-box {
   border: 1px solid #e1e5ee;
-  /* box-shadow: 2px 2px 4px rgba(110, 110, 110, 0.1), -1px -1px 1px #e1e5ee; */
+  box-shadow: 2px 2px 4px rgba(110, 110, 110, 0.1), -1px -1px 1px #e1e5ee;
 }
 
 .letter-row {
@@ -84,7 +85,7 @@ h1 {
   background-color: var(--background-black);
   color: var(--text-color);
   border: 1px solid var(--border-color);
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
 .keyboard-btn:hover {
@@ -101,36 +102,35 @@ h1 {
   color: var(--text-color);
   box-shadow: var(--box-shadow);
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
 }
 .open-hint-section-btn:hover {
   color: var(--border-color);
   opacity: 0.9;
 }
 
-section {
-  padding: 3rem 2rem;
-  /* width: 80vw; */
+#wordle-helper {
+  padding: 2em 1rem;
   margin: 0 auto;
 }
 .hidden {
   display: none;
 }
 
-#hint {
+#hint-input {
   padding: 1rem;
   width: 260px;
   background-color: var(--background-black);
   color: var(--text-color);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   font-size: 1rem;
   box-shadow: var(--box-shadow);
 }
 .hint-title {
   padding: 1rem;
 }
-#hint:focus {
+#hint-input:focus {
   outline: none;
   border: 1px solid var(--border-color);
 }
@@ -146,17 +146,13 @@ section {
   padding: 1rem;
   border: 1px solid var(--border-color);
   margin: 0.5rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius-5);
   box-shadow: var(--box-shadow);
 }
 
-/* @media only screen and (min-width: 800px) {
-  section {
-    width: 80vw;
-  }
-} */
 @media only screen and (min-width: 800px) {
-  section {
+  #wordle-helper {
+    padding: 2rem;
     width: 80vw;
   }
 }

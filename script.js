@@ -1,7 +1,7 @@
 import { WORDS } from './words.js';
 
 const onenHintBtn = document.querySelector('.open-hint-section-btn');
-const inputQuery = document.getElementById('hint');
+const inputQuery = document.getElementById('hint-input');
 const displayArea = document.getElementById('hint-results');
 const wordleHelper = document.getElementById('wordle-helper');
 const onScreenKeyboard = document.getElementById('keyboard-on-screen');
@@ -195,6 +195,9 @@ inputQuery.addEventListener('keyup', (e) => {
   displayArea.innerHTML = inputQuery.value === '' ? 'No results yet' : '';
   const userInput = e.target.value;
   if (!userInput) return;
+  if (userInput.length > 5) {
+    toastr.error('Only 1 to 5 characters can be entered');
+  }
   const filteredWords = findWords(WORDS, userInput.toLowerCase());
   filteredWords.forEach((word) => {
     const container = document.createElement('div');
