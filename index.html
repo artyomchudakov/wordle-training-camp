@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle Training Camp</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <h1>Wordle Training Camp</h1>
+  <div id="game-board"></div>
+
+  <div id="keyboard-on-screen">
+    <div class="first-keyboard-row">
+      <button class="keyboard-btn">q</button>
+      <button class="keyboard-btn">w</button>
+      <button class="keyboard-btn">e</button>
+      <button class="keyboard-btn">r</button>
+      <button class="keyboard-btn">t</button>
+      <button class="keyboard-btn">y</button>
+      <button class="keyboard-btn">u</button>
+      <button class="keyboard-btn">i</button>
+      <button class="keyboard-btn">o</button>
+      <button class="keyboard-btn">p</button>
+    </div>
+    <div class="second-keyboard-row">
+      <button class="keyboard-btn">a</button>
+      <button class="keyboard-btn">s</button>
+      <button class="keyboard-btn">d</button>
+      <button class="keyboard-btn">f</button>
+      <button class="keyboard-btn">g</button>
+      <button class="keyboard-btn">h</button>
+      <button class="keyboard-btn">j</button>
+      <button class="keyboard-btn">k</button>
+      <button class="keyboard-btn">l</button>
+    </div>
+    <div class="third-keyboard-row">
+      <button class="keyboard-btn">Del</button>
+      <button class="keyboard-btn">z</button>
+      <button class="keyboard-btn">x</button>
+      <button class="keyboard-btn">c</button>
+      <button class="keyboard-btn">v</button>
+      <button class="keyboard-btn">b</button>
+      <button class="keyboard-btn">n</button>
+      <button class="keyboard-btn">m</button>
+      <button class="keyboard-btn">Enter</button>
+    </div>
+  </div>
+  <div class="open-hint-section-btn">GET A HINT</div>
+  <section id="wordle-helper" class="hidden">
+    <input type="text" id="hint" placeholder="Type letters, min 1 and max 5" />
+    <h3 class="hint-title">Results:</h3>
+    <div id="hint-results">No results yet</div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>

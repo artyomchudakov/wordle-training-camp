@@ -1,0 +1,14 @@
+{
+  "name": "wordle-training-camp",
+  "version": "1.0.0",
+  "description": "An application that provides an opportunity to practice the famous and popular 5-letter word game, Wordle.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artyom Chudakov",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
+}
