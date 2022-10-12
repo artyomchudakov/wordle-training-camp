@@ -5,22 +5,21 @@
 }
 
 :root {
-  --box-shadow: 1px 2px 3px rgba(110, 110, 110, 0.1), -1px -1px 1px #0c7489;
-  --background-black: #16171b;
-  /* --text-color: #f0d3f7; */
-  --text-color: #e1e5ee;
-  --border-color: #0c7489;
   --border-radius: 3px;
   --border-radius-5: 5px;
+  --border-color: #0c7489;
+  --background-black: #16171b;
+  --box-shadow: 1px 2px 3px rgba(110, 110, 110, 0.1), -1px -1px 1px #0c7489;
+  --text-color: #e1e5ee;
 }
 
 body {
-  text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
-    Arial, sans-serif;
+  padding: 1rem;
   background-color: var(--background-black);
   color: var(--text-color);
-  padding: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+    Arial, sans-serif;
+  text-align: center;
 }
 
 h1 {
@@ -35,18 +34,17 @@ h1 {
 }
 
 .letter-box {
-  border: 1px solid var(--border-color);
-  box-shadow: var(--box-shadow);
-
-  border-radius: var(--border-radius);
-  margin: 2px;
-  font-size: 1.75rem;
-  font-weight: 700;
-  height: 3.5rem;
-  width: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 2px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: 1.75rem;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -61,10 +59,10 @@ h1 {
 
 /* On-screen Keyboard */
 #keyboard-on-screen {
-  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem 0;
 }
 .first-keyboard-row,
 .second-keyboard-row,
@@ -76,17 +74,17 @@ h1 {
 }
 
 .keyboard-btn {
-  font-size: 0.8rem;
-  font-weight: 500;
-  padding: 0.5rem;
   margin: 0 2px;
-  cursor: pointer;
-  text-transform: uppercase;
-  background-color: var(--background-black);
-  color: var(--text-color);
+  padding: 0.5rem;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
+  background-color: var(--background-black);
   box-shadow: var(--box-shadow);
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 .keyboard-btn:hover {
   color: var(--border-color);
@@ -95,14 +93,14 @@ h1 {
 
 /* HINT SECTION */
 .open-hint-section-btn {
+  width: 260px;
   margin: 0 auto;
   padding: 1rem;
-  width: 260px;
-  background-color: var(--background-black);
-  color: var(--text-color);
-  box-shadow: var(--box-shadow);
-  cursor: pointer;
   border-radius: var(--border-radius);
+  background-color: var(--background-black);
+  box-shadow: var(--box-shadow);
+  color: var(--text-color);
+  cursor: pointer;
 }
 .open-hint-section-btn:hover {
   color: var(--border-color);
@@ -110,22 +108,22 @@ h1 {
 }
 
 #wordle-helper {
-  padding: 2em 1rem;
   margin: 0 auto;
+  padding: 2em 1rem;
 }
 .hidden {
   display: none;
 }
 
 #hint-input {
-  padding: 1rem;
   width: 260px;
-  background-color: var(--background-black);
-  color: var(--text-color);
+  padding: 1rem;
   border: none;
   border-radius: var(--border-radius);
-  font-size: 1rem;
+  background-color: var(--background-black);
   box-shadow: var(--box-shadow);
+  color: var(--text-color);
+  font-size: 1rem;
 }
 .hint-title {
   padding: 1rem;
@@ -144,15 +142,15 @@ h1 {
 .word {
   min-width: 5rem;
   padding: 1rem;
-  border: 1px solid var(--border-color);
   margin: 0.5rem;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius-5);
   box-shadow: var(--box-shadow);
 }
 
 @media only screen and (min-width: 800px) {
   #wordle-helper {
-    padding: 2rem;
     width: 80vw;
+    padding: 2rem;
   }
 }
