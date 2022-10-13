@@ -92,7 +92,7 @@ function checkGuess() {
     const letterPosition = rightGuess.indexOf(currentGuess[i]);
 
     if (letterPosition === -1) {
-      letterColor = 'rgba(128, 128, 128, 0.5)';
+      letterColor = '#2d2e2f';
     } else {
       if (currentGuess[i] === rightGuess[i]) {
         letterColor = '#3ca02d';
