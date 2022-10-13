@@ -1,3 +1,17 @@
+export function initGameBoard(gameBoardElement, numberOfGuesses) {
+  for (let i = 0; i < numberOfGuesses; i++) {
+    const row = document.createElement('div');
+    row.className = 'letter-row';
+
+    for (let j = 0; j < 5; j++) {
+      const box = document.createElement('div');
+      box.className = 'letter-box';
+      row.appendChild(box);
+    }
+    gameBoardElement.appendChild(row);
+  }
+}
+
 export function animateCSS(element, animation, prefix = 'animate__') {
   // We create a Promise and return it
   return new Promise((resolve, reject) => {

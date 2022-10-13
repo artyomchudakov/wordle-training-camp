@@ -1,10 +1,12 @@
 import { WORDS } from './words.js';
-import { animateCSS, findWords } from './helper.js';
+import { initGameBoard, animateCSS, findWords } from './helper.js';
 
-const openHintBtn = document.querySelector('.open-hint-section-btn');
+const gameBoardElement = document.getElementById('game-board');
+
+const showHintContainerBtn = document.querySelector('.show-hint-container-btn');
 const inputQuery = document.getElementById('hint-input');
-const displayArea = document.getElementById('hint-results');
-const wordleHelper = document.getElementById('hint-section');
+const hintContainer = document.getElementById('hint-container');
+const hintResultsSection = document.getElementById('hint-results');
 const onScreenKeyboard = document.getElementById('keyboard-on-screen');
 
 const NUMBER_OF_GUESSES = 6;
@@ -13,22 +15,7 @@ let currentGuess = [];
 let nextLetter = 0;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-function initBoard() {
-  const board = document.getElementById('game-board');
-
-  for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
-    const row = document.createElement('div');
-    row.className = 'letter-row';
-
-    for (let j = 0; j < 5; j++) {
-      const box = document.createElement('div');
-      box.className = 'letter-box';
-      row.appendChild(box);
-    }
-    board.appendChild(row);
-  }
-}
-initBoard();
+initGameBoard(gameBoardElement, NUMBER_OF_GUESSES);
 
 // Accept user input
 document.addEventListener('keyup', (e) => {
@@ -165,25 +152,26 @@ function shadeKeyboard(letter, color) {
 }
 
 // HINT SECTION
-openHintBtn.addEventListener('click', () => {
-  wordleHelper.classList.toggle('hidden');
-  openHintBtn.textContent = wordleHelper.classList.contains('hidden')
+showHintContainerBtn.addEventListener('click', () => {
+  hintContainer.classList.toggle('hidden');
+  showHintContainerBtn.textContent = hintContainer.classList.contains('hidden')
     ? 'GET A HINT'
     : 'HIDE HINTS SECTION';
 });
 
 inputQuery.addEventListener('keyup', (e) => {
-  displayArea.innerHTML = inputQuery.value === '' ? 'No results yet' : '';
+  hintResultsSection.innerHTML = inputQuery.value === '' ? 'No results yet' : '';
   const userInput = e.target.value;
   if (!userInput) return;
   if (userInput.length > 5) {
     toastr.error('Only 1 to 5 characters can be entered');
   }
   const filteredWords = findWords(WORDS, userInput.toLowerCase());
+
   filteredWords.forEach((word) => {
     const container = document.createElement('div');
     container.classList.add('word');
     container.textContent = word;
-    displayArea.appendChild(container);
+    hintResultsSection.appendChild(container);
   });
 });

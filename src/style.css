@@ -92,7 +92,7 @@ h1 {
 }
 
 /* HINT SECTION */
-.open-hint-section-btn {
+.show-hint-container-btn {
   width: 260px;
   margin: 0 auto;
   padding: 1rem;
@@ -102,12 +102,12 @@ h1 {
   color: var(--text-color);
   cursor: pointer;
 }
-.open-hint-section-btn:hover {
+.show-hint-container-btn:hover {
   color: var(--border-color);
   opacity: 0.9;
 }
 
-#hint-section {
+#hint-container {
   margin: 0 auto;
   padding: 2em 1rem;
 }
@@ -149,7 +149,7 @@ h1 {
 }
 
 @media only screen and (min-width: 800px) {
-  #hint-section {
+  #hint-container {
     width: 80vw;
     padding: 2rem;
   }
