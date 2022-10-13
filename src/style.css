@@ -115,7 +115,7 @@ h1 {
   display: none;
 }
 
-#hint-input {
+#hint-search-input-field {
   width: 260px;
   padding: 1rem;
   border: none;
@@ -128,7 +128,7 @@ h1 {
 .hint-title {
   padding: 1rem;
 }
-#hint-input:focus {
+#hint-search-input-field:focus {
   outline: none;
   border: 1px solid var(--border-color);
 }

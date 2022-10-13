@@ -4,7 +4,7 @@ import { initGameBoard, animateCSS, findWords } from './helper.js';
 const gameBoardElement = document.getElementById('game-board');
 
 const showHintContainerBtn = document.querySelector('.show-hint-container-btn');
-const inputQuery = document.getElementById('hint-input');
+const hintSearchInputField = document.getElementById('hint-search-input-field');
 const hintContainer = document.getElementById('hint-container');
 const hintResultsSection = document.getElementById('hint-results');
 const onScreenKeyboard = document.getElementById('keyboard-on-screen');
@@ -19,7 +19,7 @@ initGameBoard(gameBoardElement, NUMBER_OF_GUESSES);
 
 // Accept user input
 document.addEventListener('keyup', (e) => {
-  if (e.target === inputQuery) return;
+  if (e.target === hintSearchInputField) return;
 
   if (guessesRemaining === 0) return;
 
@@ -159,8 +159,9 @@ showHintContainerBtn.addEventListener('click', () => {
     : 'HIDE HINTS SECTION';
 });
 
-inputQuery.addEventListener('keyup', (e) => {
-  hintResultsSection.innerHTML = inputQuery.value === '' ? 'No results yet' : '';
+hintSearchInputField.addEventListener('keyup', (e) => {
+  hintResultsSection.innerHTML =
+    hintSearchInputField.value === '' ? 'No results yet' : '';
   const userInput = e.target.value;
   if (!userInput) return;
   if (userInput.length > 5) {
