@@ -18,3 +18,11 @@ export function animateCSS(element, animation, prefix = 'animate__') {
     node.addEventListener('animationend', handleAnimationEnd, { once: true });
   });
 }
+
+// Search | Filter Algorithm to find word in a big array of words
+
+export function findWords(wordsArray, str) {
+  const string = str.split('');
+  const result = wordsArray.filter((word) => string.every((char) => word.includes(char)));
+  return result.sort();
+}

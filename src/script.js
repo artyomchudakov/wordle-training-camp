@@ -1,10 +1,10 @@
 import { WORDS } from './words.js';
-import { animateCSS } from './helper.js';
+import { animateCSS, findWords } from './helper.js';
 
 const openHintBtn = document.querySelector('.open-hint-section-btn');
 const inputQuery = document.getElementById('hint-input');
 const displayArea = document.getElementById('hint-results');
-const wordleHelper = document.getElementById('wordle-helper');
+const wordleHelper = document.getElementById('hint-section');
 const onScreenKeyboard = document.getElementById('keyboard-on-screen');
 
 const NUMBER_OF_GUESSES = 6;
@@ -187,11 +187,3 @@ inputQuery.addEventListener('keyup', (e) => {
     displayArea.appendChild(container);
   });
 });
-
-// Search Algorithm
-
-function findWords(words, str) {
-  const string = str.split('');
-  const result = words.filter((word) => string.every((char) => word.includes(char)));
-  return result.sort();
-}
