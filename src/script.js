@@ -1,6 +1,6 @@
 import { WORDS } from './words.js';
 
-const onenHintBtn = document.querySelector('.open-hint-section-btn');
+const openHintBtn = document.querySelector('.open-hint-section-btn');
 const inputQuery = document.getElementById('hint-input');
 const displayArea = document.getElementById('hint-results');
 const wordleHelper = document.getElementById('wordle-helper');
@@ -184,9 +184,9 @@ function shadeKeyboard(letter, color) {
 }
 
 // HINT SECTION
-onenHintBtn.addEventListener('click', () => {
+openHintBtn.addEventListener('click', () => {
   wordleHelper.classList.toggle('hidden');
-  onenHintBtn.textContent = wordleHelper.classList.contains('hidden')
+  openHintBtn.textContent = wordleHelper.classList.contains('hidden')
     ? 'GET A HINT'
     : 'HIDE HINTS SECTION';
 });
